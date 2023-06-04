@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">// Sample profile data for demonstration</p>
+<p class="p1">var profile = {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>fullName: "John Doe",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>username: "johndoe",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>email: "johndoe@example.com",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>picture: "profile-picture.jpg"</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">// Update the profile section with data</p>
+<p class="p1">function updateProfile() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("full-name").textContent = profile.fullName;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("username").textContent = "@" + profile.username;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("email").textContent = "Email: " + profile.email;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("profile-picture").src = profile.picture;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// Sample data for demonstration</p>
+<p class="p1">var posts = [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ id: 1, text: "Hello, ConnectMe!" },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{ id: 2, text: "It's a great day!" }</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">function displayPosts() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var postList = document.getElementById("post-list");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>postList.innerHTML = "";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>posts.forEach(function(post) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var postElement = document.createElement("div");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>postElement.classList.add("post");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>postElement.innerHTML = post.text;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>postList.appendChild(postElement);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function addPost() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var postText = document.getElementById("post-text").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var postId = posts.length + 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var newPost = { id: postId, text: postText };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>posts.push(newPost);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>displayPosts();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("post-text").value = "";</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">document.getElementById("post-button").addEventListener("click", addPost);</p>
+<p class="p2"><br></p>
+<p class="p1">// Initial display of profile and posts</p>
+<p class="p1">updateProfile();</p>
+<p class="p1">displayPosts();</p>
+</body>
+</html>
